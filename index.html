@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | padmaja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0d2244;
+            border-radius: 4px;
+        }
+        
+        /* Active nav link */
+        .nav-link.active {
+            color: #0f203a;
+            font-weight: 600;
+        }
+        
+        /* Project card hover effect */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-purple-500">katuri padmaja</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-purple-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-purple-500 transition">About</a>
+                    <a href="#education" class="nav-link hover:text-purple-500 transition">Education</a>
+                    <a href="#skills" class="nav-link hover:text-purple-500 transition">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-purple-500 transition">Projects</a>
+                    <a href="#certificates" class="nav-link hover:text-purple-500 transition">Certificates</a>
+                    <a href="#contact" class="nav-link hover:text-purple-500 transition">Contact</a>
+
+
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link hover:text-purple-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-purple-500 transition">About</a>
+                    <a href="#education" class="nav-link hover:text-purple-500 transition">Education</a>
+                    <a href="#skills" class="nav-link hover:text-purple-500 transition">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-purple-500 transition">Projects</a>
+                    <a href="#certificates" class="nav-link hover:text-purple-500 transition">Certificates</a>
+                    <a href="#contact" class="nav-link hover:text-purple-500 transition">Contact</a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-18">
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fadeIn">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-purple-500">padmaja</span></h1>
+                    <!-- <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600"> Aspiring Software Engineer skilled in Python and web technologies, interested in developing real-world applications</h2> -->
+                    <p class="text-lg mb-8 text-gray-600 max-w-lg" >
+                        Aspiring Software Engineer skilled in Python and web technologies, interested in developing real-world applications.<br>I'm passionate about crafting user-centered designs that drive meaningful experiences. I'm excited to showcase my projects and skills in creating intuitive and visually appealing interfaces
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg transition shadow-lg">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-purple-500 text-purple-500 hover:bg-purple-50 px-6 py-3 rounded-lg transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-fadeIn delay-200">
+                    <!-- Enhanced Blob SVG Background -->
+<!-- <svg class="absolute -top-16 -left-16 w-[28rem] h-[28rem] md:w-[34rem] md:h-[34rem] z-0 opacity-70 text-purple-200"
+     viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor"
+        d="M48.6,-76.7C62.5,-67.8,72.9,-52.6,77.7,-37.3C82.4,-22,81.5,-6.6,77.2,7.6C72.9,21.8,65.2,34.9,55.8,47.6C46.4,60.2,35.3,72.3,21.5,76.7C7.8,81.1,-8.6,77.8,-23.9,71.7C-39.1,65.7,-53.3,56.9,-61.6,44.1C-69.9,31.3,-72.2,14.7,-71.3,-1.7C-70.4,-18.1,-66.4,-34.2,-57.2,-47.7C-48.1,-61.3,-33.8,-72.4,-18.1,-77.9C-2.5,-83.5,14.4,-83.3,30.8,-78.1C47.3,-73,63.5,-62.3,48.6,-76.7Z"
+        transform="translate(100 100)" />
+</svg> -->
+
+                    <div class="relative">
+                        <div class="w-130 h-100 md:w-90 md:h-81 "> <img src="padmaja3.png" alt="padmaja" class="w-full h-full object-cover"> </div>
+                        <!-- <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-code text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-bold">5+ Years</p>
+                                    <p class="text-sm text-gray-500">Experience</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 animate-fadeIn">About <span class="text-purple-500">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center animate-fadeIn delay-100">
+                    <div class="w-64 h-64 md:w-72 md:h-72 bg-purple-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="me.png" 
+                             alt="padmaja" class="w-full h-full object-cover">
+                    </div>
+                </div> -->
+                <div class="hidden  md:w-1/3 mb-10 md:mb-0 justify-center animate-fadeIn delay-100">
+    <!-- <div class="w-64 h-64 md:w-72 md:h-72 bg-purple-100 rounded-lg overflow-hidden shadow-lg">
+        <img src="me.png" 
+             alt="padmaja" class="w-full h-full object-cover">
+    </div> -->
+</div>
+
+               <div class="w-full max-w-5xl mx-auto text-center animate-fadeIn delay-200" style="font-size: large">
+    <p class="text-gray-700 mb-8">
+“I’m Padmaja, a Computer Science student at Godavari Institute of Engineering and Technology with a strong interest in building practical and impactful software solutions. I enjoy working with Python and web technologies,
+ and I’m gradually exploring AI and cloud-based applications through projects and continuous learning. With a solid foundation in computer science and a problem-solving mindset, I aim to create applications that are both functional and meaningful.”   </p>
+    <p class="text-gray-700 mb-8">
+My approach combines technical expertise with creative problem-solving to deliver high-quality solutions. 
+                        I'm dedicated to writing clean, efficient code and creating intuitive user experiences.    </p>
+    <div class="grid grid-cols-2 gap-4 mb-8 justify-center">
+        <div class="flex items-center justify-center">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            <span>Problem Solving</span>
+        </div>
+        <div class="flex items-center justify-center">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            <span>Responsive Design</span>
+        </div>
+        <div class="flex items-center justify-center">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            <span>Clean Code</span>
+        </div>
+        <div class="flex items-center justify-center">
+            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+            <span>Team Collaboration</span>
+        </div>
+    </div>
+    <div class="flex justify-center space-x-4">
+        <a href="https://drive.google.com/file/d/1dO-BBYgi5soT-cW8AWTcst3oSpkDzLBx/view?usp=sharing" download class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition flex items-center">
+            <i class="fas fa-download mr-2"></i> Download CV
+        </a>
+        <a href="#contact" class="border border-purple-500 text-purple-500 hover:bg-purple-50 px-6 py-2 rounded-lg transition">
+            Contact Me
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+<!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-purple-500">Journey</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                My professional path and educational background that shaped my expertise.
+            </p>
+            
+            <!-- <div class="flex flex-col md:flex-row"> -->
+                <!-- Experience -->
+               
+                
+                <!-- Education -->
+                <div class="w-full max-w-3xl mx-auto animate-fadeIn delay-300">
+
+                    <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-purple-500 mr-4 text-3xl"></i> Education
+                    </h3>
+                    
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="border-l-2 border-purple-500 absolute h-full top-0 left-6"></div>
+                        
+                        <!-- Education 1 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-purple-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">SSC (10TH GRADE)</h4>
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">2020</span>
+                                </div>
+                                <p class="text-purple-500 mb-2">Z P P HIGH SCHOOL</p>
+                                <p class="text-gray-600">
+                                    completed secondary education in zpp high school yeditha
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 2 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-purple-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Diploma in Computer Engineering</h4>
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">2020 - 2023</span>
+                                </div>
+                                <p class="text-purple-500 mb-2">godavari institute of engineering and technology</p>
+                                <p class="text-gray-600">
+                                    diploma graduated in computer engineering with cgpa of 84.46
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 3 -->
+                        <div class="pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-purple-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Btech in Computer science Engineering</h4>
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">2023-2026</span>
+                                </div>
+                                <p class="text-purple-500 mb-2">godavari institute of engineering and technology</p>
+                                <p class="text-gray-600">
+                                   present
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </section>
+     <!-- Skills Section -->
+   <section id="skills" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-purple-500">Skills</span></h2>
+        <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+            I've worked with a variety of technologies in the web development world. Here are my core competencies.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <!-- Frontend Skills -->
+            <div class="animate-fadeIn delay-200">
+                <h3 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-laptop-code text-purple-500 mr-3"></i> Frontend
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-html5 text-orange-600 mr-2"></i>HTML</span><span>90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-css3-alt text-purple-600 mr-2"></i>CSS</span><span>90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-js text-yellow-500 mr-2"></i>JavaScript</span><span>40%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-react text-cyan-500 mr-2"></i>React</span><span>40%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="animate-fadeIn delay-300">
+                <h3 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-server text-purple-500 mr-3"></i> Backend
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-java text-red-700 mr-2"></i>Java</span><span>85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-node-js text-green-600 mr-2"></i>Node.js</span><span>80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-python text-yellow-700 mr-2"></i>Python</span><span>50%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="animate-fadeIn delay-400">
+                <h3 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-database text-purple-500 mr-3"></i> Database
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fas fa-database text-yellow-600 mr-2"></i>MySQL</span><span>80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fas fa-fire text-orange-500 mr-2"></i>Firebase</span><span>70%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="animate-fadeIn delay-500">
+                <h3 class="text-xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-tools text-purple-500 mr-3"></i> Tools
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fab fa-git-alt text-orange-600 mr-2"></i>Git</span><span>80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fas fa-image text-pink-500 mr-2"></i>Photoshop</span><span>60%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span><i class="fas fa-pen-nib text-red-600 mr-2"></i>Adobe Illustrator</span><span>50%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-purple-500">Projects</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                Here are some of my recent projects. Each one was carefully crafted to solve specific problems and deliver value.
+            </p>
+            <div class="flex justify-center">
+    <div class="w-full max-w-2xl">
+        <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-200">
+            
+            <div class="h-56 overflow-hidden">
+                <img src="https://www.iasgyan.in//ig-uploads/images//image00794.jpg" 
+                     alt="Project 1" 
+                     class="w-full h-full object-cover transition duration-500 hover:scale-105">
+            </div>
+
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2" style="text-align: center;color: maroon;">
+                    Major Project
+                </h2>
+                <h3 class="text-xl font-bold mb-2">
+                    Analysis of Ozone Layer Depletion over Industrial Regions in India
+                </h3>
+
+                <p class="text-gray-600 mb-4">
+                    A machine learning model using Python and ML models to analyze and predict ozone layer depletion from environmental datasets. Visualized trends and insights to understand the impact of industrial emissions.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Machine Learning</span>
+                </div>
+
+                <div class="flex space-x-3">
+                    <a href="https://github.com/padmajakaturi/Analysis_of_ozone-layer-depletion-over-industrial-regions-in-india" class="text-gray-500 hover:text-gray-700">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><br><br>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://static.vecteezy.com/system/resources/previews/021/916/224/non_2x/promo-banner-with-stack-of-books-globe-inkwell-quill-plant-lantern-ebook-world-book-day-bookstore-bookshop-library-book-lover-bibliophile-education-for-poster-cover-advertising-vector.jpg" 
+                             alt="Project 1" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">StoryWorld Page</h3>
+                        <p class="text-gray-600 mb-4">
+                            A visually appealing online bookstore landing page created using HTML and CSS.
+                            Designed to showcase books in a clean and responsive layout.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/story_world" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://unity.edu/wp-content/uploads/2025/04/graphs-and-calculator-2024-03-26-21-18-35-utc-scaled-1-scaled-1-1024x683.jpg.webp" 
+                             alt="Project 2" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Basic Calculator</h3>
+                        <p class="text-gray-600 mb-4">
+                            A basic calculator  to perform arithmetic operations.
+ supports addition, subtraction, multiplication, and division.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/calculator" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/1287186696/photo/food-delivery-app-order-with-phone-online-mobile-service-for-take-away-burger-and-pizza.jpg?s=612x612&w=0&k=20&c=s0g33OOVOT9nZiFat2wvo7HhRvmM5kx0CJBp1OSfbRE=" 
+                             alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Country Food</h3>
+                        <p class="text-gray-600 mb-4">
+                            An online food ordering platform developed using Angular and Bootstrap.
+Users can browse and order food with responsive UI and modular components.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Angular</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                            <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CSS3</span> -->
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/country_food" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://www.pixel-studios.com/blog/wp-content/uploads/2018/12/012.jpg" 
+                             alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Library Management System
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            A web-based system using JSP, JDBC, and MySQL to manage library records.
+                            Enables admin to handle book issues, returns, and member data efficiently.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JSP</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JDBC</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/library-management-system" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://www.shutterstock.com/image-photo/human-communication-network-concept-resources-600nw-2003840618.jpg" 
+                             alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Contacts Management System
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            A Spring MVC and MySQL-based application for storing and editing contact details.
+Implements full CRUD operations with structured MVC architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Spring MVC</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                            <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CSS3</span> -->
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/contacts" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://www.shutterstock.com/image-vector/donate-vector-colored-horizontal-banner-600nw-1016215984.jpg" 
+                             alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Helping Hands</h3>
+                        <p class="text-gray-600 mb-4">
+                            A donation-focused website created with HTML, CSS, and Bootstrap.
+Encourages community contributions with an intuitive and mobile-friendly interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- <a href="#" class="text-purple-500 hover:text-purple-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a> -->
+                            <a href="https://github.com/padmajakaturi/Helping-hands" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="text-center mt-12 animate-fadeIn delay-500">
+                <a href="#"  class="inline-block border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg transition">
+                    View All Projects
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+   <!-- Certificates & Badges Section -->
+<section id="certificates" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 animate-fadeIn">
+      My <span class="text-purple-500">Certificates</span> & <span class="text-purple-500">Badges</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Certificate 1 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-100">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-certificate text-purple-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">Core Java – AH Carrier</h3>
+        </div>
+                <img src="core_java.jpeg" alt="core_java Certificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200">
+
+        <!-- <p class="text-gray-600">Awarded for completing core Java concepts and hands-on assignments.</p> -->
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-200">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-certificate text-purple-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">Artificial Intelligence – Aimers Society</h3>
+        </div>
+                <img src="aimers.jpeg" alt="AIMERS Certificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200">
+        <!-- <p class="text-gray-600">Completed AI model training and deployment tasks using Hugging Face, YOLO, etc.</p> -->
+      </div>
+       <!-- Certificate 3 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-200">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-certificate text-purple-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">AWS Cloud Computing-DevOps – APSSDC</h3>
+        </div>
+        <img src="AWS.png" alt="AWS Certificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200">
+        <!-- <p class="text-gray-600">Completed AWS Cloud Computing-DevOps and deployment tasks Various AWS technoogies.</p> -->
+        
+      </div>
+
+       <!-- Certificate 4 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-200">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-certificate text-purple-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">Java Full Stack – Certiport</h3>
+        </div>
+                <img src="jfs.png" alt="certiport Certificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200">
+        <!-- <p class="text-gray-600">Completed AI model training and deployment tasks using Hugging Face, YOLO, etc.</p> -->
+      </div>
+      <!-- Certificate 5 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-200">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-certificate text-purple-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">Full-Stack Mern – SmartInternz</h3>
+        </div>
+                <img src="Mern Stack_smartinternz.jpeg" alt="smartInternzzCertificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200">
+        <!-- <p class="text-gray-600">Completed AI model training and deployment tasks using Hugging Face, YOLO, etc.</p> -->
+      </div>
+      
+      <!-- Badge 1 -->
+      <div class="bg-purple-50 p-6 rounded-lg shadow-md animate-fadeIn delay-300">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-award text-yellow-500 text-3xl mr-4"></i>
+          <h3 class="text-lg font-semibold">Credly Badges</h3>
+        </div>
+         <img src="https://cdn-icons-png.flaticon.com/512/4477/4477869.png" alt="smartInternzzCertificate" class="w-full max-w-md rounded-lg shadow-lg border border-gray-200" style="max-width: 200px;" >
+        <p class="text-gray-600">
+          View my verified achievements on <a href="https://www.credly.com/users/padmaja-katuri.96d131ee" class="text-purple-500 underline">Credly</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50" >
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">Get In <span class="text-purple-500">Touch</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            </p>
+            
+           <div class="flex flex-col items-center justify-center">
+    <div class="w-full md:w-1/2 animate-fadeIn delay-200">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600" ><a href="mailto:padmajakaturi99@gmail.com">padmajakaturi99@gmail.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+91 9618117114</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-600">yeditha,mandapeta mandal</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/padmajakaturi" class="bg-purple-500 hover:bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="http://www.linkedin.com/in/padmaja-katuri-682362254" class="bg-purple-500 hover:bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <!-- <a href="#" class="bg-purple-500 hover:bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a> -->
+                                <a href="https://www.instagram.com/padhu54321?igsh=MTl6anppM2ZqdXljYQ==" class="bg-purple-500 hover:bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="md:w-1/2 md:pl-8 animate-fadeIn delay-300">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg transition w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+<div id="messageDisplayArea" class="max-w-3xl mx-auto mb-10 space-y-4 px-4"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">katuri padmaja</h3>
+                    <p class="max-w-xs text-gray-400">
+                        Java Full Stack Developer
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4 mb-4">
+                            <a href="https://github.com/padmajakaturi" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/in/padmaja-katuri-682362254" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <!-- <a href="#" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a> -->
+                            <a href="https://www.instagram.com/padhu54321?igsh=MTl6anppM2ZqdXljYQ==" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-400">padmajakaturi99@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 padmaja. All rights reserved.</p>
+            </div> -->
+        </div>
+    </footer>
+
+    <script>
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Create a new message box
+        const messageBox = document.createElement('div');
+        messageBox.className = 'bg-gray-100 p-4 rounded-lg shadow-md border relative';
+
+        messageBox.innerHTML = `
+            <button class="absolute top-2 right-2 text-red-500 hover:text-red-700" onclick="this.parentElement.remove()">✖</button>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Message:</strong><br>${message}</p>
+        `;
+
+        // Append the message box to the display area
+        const displayArea = document.getElementById('messageDisplayArea');
+        displayArea.appendChild(messageBox);
+
+        // Reset the form
+        document.getElementById('contactForm').reset();
+    });
+
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // navLinks.forEach(link => {
+            //     link.classList.remove('active');
+            //     if (link.getAttribute('href') === `#${current}`) {
+            //         link.classList.add('active');
+            //     }
+            // });
+            navLinks.forEach(link => {
+  link.classList.remove('active');
+  if (link.getAttribute('href') === `#${current}`) {
+    link.classList.add('active');
+  }
+});
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            // alert(Thank you, ${name}! Your message has been sent. I'll get back to you soon.);
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add animation classes on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+// certificates
+        const toggleButton = document.getElementById("toggleButton");
+  const hiddenItems = document.querySelectorAll(".hiddenItem");
+
+  let isExpanded = false;
+
+  toggleButton.addEventListener("click", () => {
+    isExpanded = !isExpanded;
+
+    hiddenItems.forEach(item => {
+      item.classList.toggle("hidden");
+    });
+
+    toggleButton.textContent = isExpanded ? "Show Less" : "Show More";
+  });
+    </script>
+</body>
+</html>
